@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Accessibility: Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+.font-display {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Glassmorphism & High-Contrast Glow styles */
+.glass-panel {
+  background: rgba(21, 40, 58, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(0, 245, 160, 0.6);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 30px 2px rgba(0, 245, 160, 0.25);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Vivid Keyframe Animations */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-1.5deg);
+  }
+}
+
+@keyframes pulse-emerald-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 245, 160, 0.3);
+    opacity: 0.9;
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 245, 160, 0.8), 0 0 60px rgba(0, 245, 160, 0.3);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-coral-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 42, 85, 0.3);
+    opacity: 0.9;
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 42, 85, 0.8), 0 0 60px rgba(255, 42, 85, 0.3);
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes ripple-wave {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-emerald-glow {
+  animation: pulse-emerald-glow 3s ease-in-out infinite;
+}
+
+.animate-coral-glow {
+  animation: pulse-coral-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: gradient-move 5s ease infinite;
+}
+
+.animate-ripple {
+  animation: ripple-wave 2.2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}

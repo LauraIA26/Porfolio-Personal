@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio y Espacio Laboral — Laura Jiménez López",
+  "description": "Portfolio profesional y zona de demostración para organización de búsqueda laboral de Laura Jiménez López (Illescas, Toledo).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
